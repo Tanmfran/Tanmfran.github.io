@@ -26,6 +26,16 @@ const getVariants = (direction: string) => ({
 });
 
 export const IconHolder = (props: IconHolderProps) => {
+  const [wobble, setWobble] = React.useState(0);
+
+  const handleClick = () => {
+    setWobble(1);
+  };
+
+  const handleWobbleEnd = () => {
+    setWobble(0);
+  };
+
   return (
     <div className="icon-holder">
       <AnimatePresence>
@@ -51,7 +61,13 @@ export const IconHolder = (props: IconHolderProps) => {
           exit={"initial"}
           animate={"animate"}
         >
-          {props.text}
+          <span
+            className={wobble ? styles.imageWobbleActive : styles.imageWobble}
+            onClick={handleClick}
+            onAnimationEnd={handleWobbleEnd}
+          >
+            {props.text}
+          </span>
         </motion.h1>
       </AnimatePresence>
     </div>

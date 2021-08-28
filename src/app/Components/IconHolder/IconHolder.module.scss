@@ -11,6 +11,13 @@
     perspective: 1000px;
   }
 
+  span {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
   @keyframes shake {
     10%, 90% {
       transform: translate3d(-1px, 0, 0);
@@ -28,4 +35,36 @@
       transform: translate3d(4px, 0, 0);
     }
   }
+}
+
+
+.imageWobble {
+  display: block;
+  margin: 0 auto;
+}
+.imageWobbleActive {
+  animation: example 3s 5;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
 }
