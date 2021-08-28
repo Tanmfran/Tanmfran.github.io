@@ -1,5 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import styles from "./IconHolder.module.scss";
 
 interface IconHolderProps {
   icon: {
@@ -36,10 +37,14 @@ export const IconHolder = (props: IconHolderProps) => {
           exit={"initial"}
           animate={"animate"}
         >
-          <img src={props.icon.src} alt={props.icon.alt} />
+          <img
+            className={styles.image}
+            src={props.icon.src}
+            alt={props.icon.alt}
+          />
         </motion.div>
         <motion.h1
-          className="icon-holder__text"
+          className={styles.shakeText}
           key={props.text}
           variants={getVariants("bottom")}
           initial={"initial"}
