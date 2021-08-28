@@ -10,8 +10,10 @@ export const App = () => {
     <div role={"main"} className={"App"}>
       <Router>
         <AppHeader />
-        <LeftNav />
-        <Routes />
+        <div className={"pageContent"}>
+          <LeftNav />
+          <Routes />
+        </div>
       </Router>
     </div>
   );
