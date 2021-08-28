@@ -1,5 +1,6 @@
 import React from "react";
 import ImageHolder from "../ImageHolder/ImageHolder";
+import { IconHolder } from "../IconHolder/IconHolder";
 
 export const AppHeader = () => {
   const imageSource = {
@@ -7,5 +8,10 @@ export const AppHeader = () => {
     alt: "https://www.animeoutline.com/wp-content/uploads/2018/07/anime_cat.png",
   };
 
-  return <ImageHolder img={imageSource} type={"rotate"}></ImageHolder>;
+  return (
+    <>
+      <IconHolder icon={imageSource} text={"THE SHIT"} />
+      <ImageHolder img={imageSource} type={"rotate"}></ImageHolder>
+    </>
+  );
 };

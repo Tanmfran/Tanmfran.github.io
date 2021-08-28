@@ -1,4 +1,5 @@
 import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface IconHolderProps {
   icon: {
@@ -8,13 +9,46 @@ interface IconHolderProps {
   text: string;
 }
 
+const ANIMATION_DURATION_S = 0.8;
+
+const getVariants = (direction: string) => ({
+  initial: {
+    y: direction === "top" ? "-100%" : "100%",
+    opacity: 0,
+    transition: { duration: ANIMATION_DURATION_S, ease: "easeInOut" },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: ANIMATION_DURATION_S, ease: "easeInOut" },
+  },
+});
+
 export const IconHolder = (props: IconHolderProps) => {
   return (
     <div className="icon-holder">
-      <div className="icon-holder__icon">
-        <img src={props.icon.src} alt={props.icon.alt} />
-      </div>
-      <h1 className="icon-holder__text">{props.text}</h1>
+      <AnimatePresence>
+        <motion.div
+          className="icon-holder__icon"
+          key={props.text + "icon"}
+          variants={getVariants("top")}
+          initial={"initial"}
+          exit={"initial"}
+          animate={"animate"}
+        >
+          <img src={props.icon.src} alt={props.icon.alt} />
+        </motion.div>
+        <motion.h1
+          className="icon-holder__text"
+          key={props.text}
+          variants={getVariants("bottom")}
+          initial={"initial"}
+          exit={"initial"}
+          animate={"animate"}
+        >
+          {props.text}
+        </motion.h1>
+      </AnimatePresence>
     </div>
   );
 };

@@ -10,8 +10,8 @@ interface ImageHolderProps {
   type?: string;
 }
 
-const TRANSITION_TIME_OPACITY_S = 1;
-const TRANSITION_TIME_ROTATE_S = 2;
+const TRANSITION_TIME_OPACITY_S = 5;
+const TRANSITION_TIME_ROTATE_S = 0.01;
 
 export const ImageHolder = (props: ImageHolderProps) => {
   if (props.type === "rotate") {
