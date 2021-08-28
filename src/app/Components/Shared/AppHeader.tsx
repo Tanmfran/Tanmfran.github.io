@@ -1,5 +1,4 @@
 import React from "react";
-import ImageHolder from "../ImageHolder/ImageHolder";
 import { IconHolder } from "../IconHolder/IconHolder";
 
 export const AppHeader = () => {
@@ -10,7 +9,9 @@ export const AppHeader = () => {
 
   return (
     <>
-      <IconHolder icon={headerData} text={"Tannor Franks"} />
+      <div>
+        <IconHolder icon={headerData} text={"Tannor Franks"} />
+      </div>
     </>
   );
 };

@@ -1,6 +1,9 @@
 .leftNavItem {
-  margin: 3px;
-  outline: 1px solid;
+  margin: 0 4px 8px 4px;
+  outline: 2px solid;
 
-  text-decoration: unset;
+  a {
+    text-decoration: unset;
+    color: black;
+  }
 }
