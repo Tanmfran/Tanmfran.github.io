@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Tanmfran/Tanmfran.github.io/static/css/main.aee30b90.chunk.css",
-    "main.js": "/Tanmfran/Tanmfran.github.io/static/js/main.51b1cc3d.chunk.js",
-    "main.js.map": "/Tanmfran/Tanmfran.github.io/static/js/main.51b1cc3d.chunk.js.map",
-    "runtime-main.js": "/Tanmfran/Tanmfran.github.io/static/js/runtime-main.daf1c0e9.js",
-    "runtime-main.js.map": "/Tanmfran/Tanmfran.github.io/static/js/runtime-main.daf1c0e9.js.map",
-    "static/js/2.ccc83c65.chunk.js": "/Tanmfran/Tanmfran.github.io/static/js/2.ccc83c65.chunk.js",
-    "static/js/2.ccc83c65.chunk.js.map": "/Tanmfran/Tanmfran.github.io/static/js/2.ccc83c65.chunk.js.map",
-    "static/js/3.c74aa2e8.chunk.js": "/Tanmfran/Tanmfran.github.io/static/js/3.c74aa2e8.chunk.js",
-    "static/js/3.c74aa2e8.chunk.js.map": "/Tanmfran/Tanmfran.github.io/static/js/3.c74aa2e8.chunk.js.map",
-    "index.html": "/Tanmfran/Tanmfran.github.io/index.html",
-    "static/css/main.aee30b90.chunk.css.map": "/Tanmfran/Tanmfran.github.io/static/css/main.aee30b90.chunk.css.map",
-    "static/js/2.ccc83c65.chunk.js.LICENSE.txt": "/Tanmfran/Tanmfran.github.io/static/js/2.ccc83c65.chunk.js.LICENSE.txt"
+    "main.css": "/Tanmfran/AboutMe/static/css/main.d32ab707.chunk.css",
+    "main.js": "/Tanmfran/AboutMe/static/js/main.9fffa853.chunk.js",
+    "main.js.map": "/Tanmfran/AboutMe/static/js/main.9fffa853.chunk.js.map",
+    "runtime-main.js": "/Tanmfran/AboutMe/static/js/runtime-main.5ba92ad3.js",
+    "runtime-main.js.map": "/Tanmfran/AboutMe/static/js/runtime-main.5ba92ad3.js.map",
+    "static/js/2.ccc83c65.chunk.js": "/Tanmfran/AboutMe/static/js/2.ccc83c65.chunk.js",
+    "static/js/2.ccc83c65.chunk.js.map": "/Tanmfran/AboutMe/static/js/2.ccc83c65.chunk.js.map",
+    "static/js/3.c74aa2e8.chunk.js": "/Tanmfran/AboutMe/static/js/3.c74aa2e8.chunk.js",
+    "static/js/3.c74aa2e8.chunk.js.map": "/Tanmfran/AboutMe/static/js/3.c74aa2e8.chunk.js.map",
+    "index.html": "/Tanmfran/AboutMe/index.html",
+    "static/css/main.d32ab707.chunk.css.map": "/Tanmfran/AboutMe/static/css/main.d32ab707.chunk.css.map",
+    "static/js/2.ccc83c65.chunk.js.LICENSE.txt": "/Tanmfran/AboutMe/static/js/2.ccc83c65.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.daf1c0e9.js",
+    "static/js/runtime-main.5ba92ad3.js",
     "static/js/2.ccc83c65.chunk.js",
-    "static/css/main.aee30b90.chunk.css",
-    "static/js/main.51b1cc3d.chunk.js"
+    "static/css/main.d32ab707.chunk.css",
+    "static/js/main.9fffa853.chunk.js"
   ]
 }
