@@ -1,6 +1,7 @@
 import React from "react";
 import ImageHolder from "../ImageHolder/ImageHolder";
 import styles from "./Dashboard.module.scss";
+import { Card } from "@material-ui/core";
 
 export const Dashboard = () => {
   const imageSource = {
@@ -9,10 +10,10 @@ export const Dashboard = () => {
   };
 
   return (
-    <ImageHolder
-      className={styles.dashboard}
-      img={imageSource}
-      type={"rotate"}
-    />
+    <div>
+      <Card className={styles.dashboard} variant={"elevation"}>
+        <ImageHolder img={imageSource} type={"rotate"} />
+      </Card>
+    </div>
   );
 };

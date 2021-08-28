@@ -4,6 +4,7 @@
 }
 
 .shakeText {
+  color: white;
   &:hover {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
@@ -62,9 +63,9 @@
 }
 
 @keyframes colorChange {
-  0%   {background-color:red; left:0px; top:0px;}
-  25%  {background-color:yellow; left:200px; top:0px;}
-  50%  {background-color:blue; left:200px; top:200px;}
-  75%  {background-color:green; left:0px; top:200px;}
-  100% {background-color:red; left:0px; top:0px;}
+  0%   {color:red; left:0px; top:0px;}
+  25%  {color:yellow; left:200px; top:0px;}
+  50%  {color:blue; left:200px; top:200px;}
+  75%  {color:green; left:0px; top:200px;}
+  100% {color:red; left:0px; top:0px;}
 }

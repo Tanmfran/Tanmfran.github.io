@@ -1,9 +1,40 @@
 .leftNavItem {
   margin: 0 4px 8px 4px;
-  outline: 2px solid;
-
   a {
     text-decoration: unset;
-    color: black;
+    color: white;
+  }
+
+  &:hover {
+    background: lighten(#282c34, 50%)
+  }
+
+}
+
+.drawer {
+  top: unset;
+  left: unset;
+  position: unset;
+
+  :global(.MuiDrawer-paper) {
+    top: unset;
+    left: unset;
+    position: unset;
+    border-radius: 8px;
+    background: #282c34;
   }
 }
+
+
+.drawerCollapsed {
+  top: unset;
+  left: unset;
+  position: unset;
+  width: 10%
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+}
+

@@ -1,27 +1,24 @@
 import React from "react";
-import { NavItem } from "./NavItem";
+import { NavList } from "./NavList";
+import { AppBar, Drawer, IconButton, List, Toolbar } from "@material-ui/core";
+import styles from "./LeftNav.module.scss";
+import { Link } from "react-router-dom";
 
 export const LeftNav = () => {
-  const routes = [
-    {
-      header: "Dashboard",
-      path: "",
-    },
-    {
-      header: "Cool Shit",
-      path: "cool-shit",
-    },
-    {
-      header: "Jakes house",
-      path: "shit-shack",
-    },
-  ];
+  const [open, setOpen] = React.useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <nav>
-      {routes.map((route) => (
-        <NavItem header={route.header} path={route.path} key={route.header} />
-      ))}
-    </nav>
+    <>
+      <Drawer variant={"permanent"} className={styles.drawer}>
+        <NavList />
+      </Drawer>
+    </>
   );
 };

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import styles from "./IconHolder.module.scss";
 
 interface IconHolderProps {
-  icon: {
+  icon?: {
     src: string;
     alt: string;
   };
@@ -47,11 +47,13 @@ export const IconHolder = (props: IconHolderProps) => {
           exit={"initial"}
           animate={"animate"}
         >
-          <img
-            className={styles.image}
-            src={props.icon.src}
-            alt={props.icon.alt}
-          />
+          {props.icon && (
+            <img
+              className={styles.image}
+              src={props.icon.src}
+              alt={props.icon.alt}
+            />
+          )}
         </motion.div>
         <motion.h1
           className={styles.shakeText}
