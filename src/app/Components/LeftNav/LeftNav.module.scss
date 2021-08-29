@@ -4,11 +4,15 @@
     text-decoration: unset;
     color: white;
   }
+  flex-wrap: wrap;
+
+  :global(.MuiListItem-root) {
+    width: unset;
+  }
 
   &:hover {
     background: lighten(#282c34, 50%)
   }
-
 }
 
 .drawer {
@@ -37,5 +41,16 @@
   display: flex;
   flex-direction: column;
   width: unset;
+  flex-wrap: wrap;
+  padding-top: 0;
+
+  :global(.MuiListItem-root) {
+    width: unset;
+  }
+
+  :global(.MuiList-padding) {
+    padding-top: 0
+  }
 }
+
 

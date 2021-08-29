@@ -21,13 +21,14 @@ export const NavList = () => {
   ];
 
   return (
-    <List className={styles.navList}>
+    <List className={styles.navList} style={{ padding: 0 }}>
       {routes.map((route) => (
         <ListItem key={route.header} className={styles.leftNavItem}>
           <Button
             key={route.header}
             component={motion.div}
-            whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
+            whileTap={{ scale: 2 }}
+            whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
           >
             <Link to={`/${route.path}`}>{route.header}</Link>
           </Button>
