@@ -10,7 +10,7 @@ interface ImageHolderProps {
   type?: string;
 }
 
-const TRANSITION_TIME_OPACITY_S = 5;
+const TRANSITION_TIME_OPACITY_S = 4;
 const TRANSITION_TIME_ROTATE_S = 1;
 
 export const ImageHolder = (props: ImageHolderProps) => {
@@ -34,7 +34,10 @@ export const ImageHolder = (props: ImageHolderProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, rotate: [-6, 0, 6] }}
+      animate={{ opacity: 1, rotate: [-6, 6] }}
+      transition={{
+        duration: TRANSITION_TIME_OPACITY_S,
+      }}
       className={props.className ? props.className : undefined}
     >
       <img src={props.img.src} alt={props.img.alt} />

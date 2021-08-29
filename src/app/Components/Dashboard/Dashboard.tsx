@@ -12,7 +12,7 @@ export const Dashboard = () => {
   return (
     <div>
       <Card className={styles.dashboard} variant={"elevation"}>
-        <ImageHolder img={imageSource} type={"rotate"} />
+        <ImageHolder img={imageSource} type={"none"} />
       </Card>
     </div>
   );
