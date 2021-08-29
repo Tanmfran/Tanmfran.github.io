@@ -18,6 +18,11 @@ export const NavList = () => {
       header: "Jakes house",
       path: "shit-shack",
     },
+
+    {
+      header: "Loki Zone",
+      path: "loki-zone",
+    },
   ];
 
   return (

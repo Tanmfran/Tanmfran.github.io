@@ -19,7 +19,7 @@ export const ImageHolder = (props: ImageHolderProps) => {
       <div className={props.className ? props.className : undefined}>
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, rotate: [-6, 0, 6] }}
+          animate={{ opacity: 1, rotate: [-180, 180] }}
           transition={{
             duration: TRANSITION_TIME_OPACITY_S,
             rotate: { yoyo: Infinity, duration: TRANSITION_TIME_ROTATE_S },
