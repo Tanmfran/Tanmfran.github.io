@@ -16,17 +16,13 @@ export const LokiZone = () => {
   };
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      <>
-        {showModal && (
-          <LokiModal
-            isVisible={true}
-            closeModal={closeModal}
-            key={"lokiModal"}
-          />
-        )}
-        {/*{!showModal && <ImageHolder img={lokiImage} type={"rotate"} />}*/}
-      </>
-    </AnimatePresence>
+    <>
+      <LokiModal
+        isVisible={showModal}
+        closeModal={closeModal}
+        key={"lokiModal"}
+      />
+      {/*{!showModal && <ImageHolder img={lokiImage} type={"rotate"} />}*/}
+    </>
   );
 };

@@ -5,13 +5,13 @@ import {
   ButtonGroup,
   Card,
   Fade,
-  Modal,
   Slide,
 } from "@material-ui/core";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./LokiZone.module.scss";
-import ReactModal from "react-modal";
+import Modal, { Styles } from "react-modal";
 import { useHistory } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 
 interface LokiModalProps {
   isVisible: boolean;
@@ -33,52 +33,62 @@ const getVariants = (direction: string) => ({
   },
 });
 
+const customStyles = {
+  overlay: {
+    position: undefined,
+    backgroundColor: "rgba(0, 0, 0, 0)",
+  },
+  content: {},
+};
+
 export const LokiModal = (props: LokiModalProps) => {
   const history = useHistory();
 
   const sendMeHome = () => {
     props.closeModal();
-    history.push("/");
   };
 
   return (
     <Modal
-      open={props.isVisible}
-      onClose={props.closeModal}
-      closeAfterTransition={true}
+      closeTimeoutMS={300}
+      isOpen={props.isVisible}
+      onRequestClose={props.closeModal}
       className={styles.lokiModal}
+      portalClassName={styles.lokiModal}
+      ariaHideApp={false}
+      style={customStyles as Styles}
     >
-      {/*<motion.div*/}
-      {/*  key="modal"*/}
-      {/*  className="icon-holder__icon"*/}
-      {/*  variants={getVariants("top")}*/}
-      {/*  initial={"initial"}*/}
-      {/*  exit={{ opacity: 0 }}*/}
-      {/*  animate={"animate"}*/}
-      {/*>*/}
-      <Card className={styles.lokiCard} variant={"elevation"}>
-        <ButtonGroup>
-          <Button
-            onClick={props.closeModal}
-            component={motion.div}
-            whileTap={{ scale: 2 }}
-            whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
-            style={{ padding: 8 }}
-          >
-            Heckers Yes
-          </Button>
-          <Button
-            onClick={sendMeHome}
-            component={motion.div}
-            whileTap={{ scale: 2 }}
-            whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
-            style={{ padding: 8 }}
-          >
-            No, send me back!
-          </Button>
-        </ButtonGroup>
-      </Card>
-      {/*</motion.div>*/}
+      <motion.div
+        key="modal"
+        className="icon-holder__icon"
+        variants={getVariants("top")}
+        initial={"initial"}
+        exit={{ opacity: 0 }}
+        animate={"animate"}
+      >
+        <Card className={styles.lokiCard} variant={"elevation"}>
+          <ButtonGroup>
+            <Button
+              onClick={props.closeModal}
+              component={motion.div}
+              whileTap={{ scale: 2 }}
+              whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
+              style={{ padding: 8 }}
+            >
+              Heckers Yes
+            </Button>
+            <Button
+              onClick={sendMeHome}
+              component={motion.div}
+              whileTap={{ scale: 2 }}
+              whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
+              style={{ padding: 8 }}
+            >
+              No, send me back!
+            </Button>
+          </ButtonGroup>
+        </Card>
+      </motion.div>
     </Modal>
   );
 };

@@ -72,3 +72,42 @@
     background-position: 0 50%;
   }
 }
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 500ms ease-in-out;
+  position: unset;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.ReactModal__Body--open {
+  height: 100%
+}
+
+
+@keyframes animateModal {
+  0% {
+    top: -20px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.root {
+  width: 100%;
+  animation-name: animateModal;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+}
