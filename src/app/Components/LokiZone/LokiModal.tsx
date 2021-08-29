@@ -48,37 +48,37 @@ export const LokiModal = (props: LokiModalProps) => {
       closeAfterTransition={true}
       className={styles.lokiModal}
     >
-      <motion.div
-        key="modal"
-        className="icon-holder__icon"
-        variants={getVariants("top")}
-        initial={"initial"}
-        exit={{ opacity: 0 }}
-        animate={"animate"}
-      >
-        <Card className={styles.lokiModal} variant={"elevation"}>
-          <ButtonGroup>
-            <Button
-              onClick={props.closeModal}
-              component={motion.div}
-              whileTap={{ scale: 2 }}
-              whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
-              style={{ padding: 8 }}
-            >
-              Heckers Yes
-            </Button>
-            <Button
-              onClick={sendMeHome}
-              component={motion.div}
-              whileTap={{ scale: 2 }}
-              whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
-              style={{ padding: 8 }}
-            >
-              No, send me back!
-            </Button>
-          </ButtonGroup>
-        </Card>
-      </motion.div>
+      {/*<motion.div*/}
+      {/*  key="modal"*/}
+      {/*  className="icon-holder__icon"*/}
+      {/*  variants={getVariants("top")}*/}
+      {/*  initial={"initial"}*/}
+      {/*  exit={{ opacity: 0 }}*/}
+      {/*  animate={"animate"}*/}
+      {/*>*/}
+      <Card className={styles.lokiCard} variant={"elevation"}>
+        <ButtonGroup>
+          <Button
+            onClick={props.closeModal}
+            component={motion.div}
+            whileTap={{ scale: 2 }}
+            whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
+            style={{ padding: 8 }}
+          >
+            Heckers Yes
+          </Button>
+          <Button
+            onClick={sendMeHome}
+            component={motion.div}
+            whileTap={{ scale: 2 }}
+            whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
+            style={{ padding: 8 }}
+          >
+            No, send me back!
+          </Button>
+        </ButtonGroup>
+      </Card>
+      {/*</motion.div>*/}
     </Modal>
   );
 };
