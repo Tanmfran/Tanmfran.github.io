@@ -29,6 +29,7 @@ export const NavList = () => {
             component={motion.div}
             whileTap={{ scale: 2 }}
             whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
+            style={{ padding: 8 }}
           >
             <Link to={`/${route.path}`}>{route.header}</Link>
           </Button>
