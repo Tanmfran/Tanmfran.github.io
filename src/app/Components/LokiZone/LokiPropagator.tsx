@@ -6,7 +6,12 @@ const lokiImage = {
   alt: "MyBoy!!",
 };
 
-export const LokiPropogator = () => {
+const lokiFace = {
+  src: "https://previews.dropbox.com/p/thumb/ABQPqA0f-hCc92MvV8sufOZhE0g8FG1jPsgetM79QHjNXcVwnJOAcQdqBmAgGyzV6PuGrGVq0PU72au4rtr570_cyo-vpi1BCWl2JPGY4h5kcZHA-lhW2YTE3Ja6GTjP7zBPAtRs_v123nrRX1ZwKeCaj78WaZuZyuOYTcxBjRSieYSbx8YxnLCJaAUIuBhu5DWp4lbFr4btKiM1oPBYvcQo5Pyu9cikPBFamxZ6QbE-f883wEFXcpshakHQZlPuKvolK0C1xEHtLGrVwql3n2iqBw6njaWPTHeCCDGCZYvoJCxjjuu9m4JIYddVdGzJubL7OCR2Q-Ytf_AoW1iCTcWx983iXKJpOJVfEzdcGt72eA/p.png?fv_content=true&size_mode=5",
+  alt: "Dat Boi",
+};
+
+export const LokiPropagator = () => {
   const [placeOnPage, setPlaceOnPage] = useState([] as any);
 
   const between = (min: number, max: number) => {
@@ -14,23 +19,20 @@ export const LokiPropogator = () => {
   };
 
   useEffect(() => {
-    const maxWidth = window.innerWidth;
-    const maxHeight = window.innerHeight;
-    if (placeOnPage.count > 20) {
-      return;
-    }
+    const maxWidth = window.innerWidth - 300;
+    const maxHeight = window.innerHeight - 300;
 
-    const timeout = setTimeout(() => {
+    const interval = setInterval(() => {
       const newPlace = {
         x: between(0, maxHeight),
         y: between(0, maxWidth),
       };
-      setPlaceOnPage([...placeOnPage, newPlace]);
+      if (placeOnPage.length < 20) {
+        setPlaceOnPage([...placeOnPage, newPlace]);
+      }
     }, 1000);
 
-    return () => {
-      clearTimeout(timeout);
-    };
+    return () => clearInterval(interval);
   }, [placeOnPage]);
 
   return (
@@ -44,7 +46,7 @@ export const LokiPropogator = () => {
         };
         return (
           <ImageHolder
-            img={lokiImage}
+            img={lokiFace}
             type={"rotate"}
             style={style}
             key={`${place.x}${place.y}`}
