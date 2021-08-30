@@ -2,17 +2,11 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-
   background: #282c34;
-  //background-size: 120% 120%;
-  //animation: gradient-animation 6s ease infinite;
 
-
-  height: 100%;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 
   .pageContent {
     height: 100%;
