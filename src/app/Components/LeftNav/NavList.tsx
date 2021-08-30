@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./LeftNav.module.scss";
-import { Button, IconButton, List, ListItem } from "@material-ui/core";
+import { Button, List, ListItem } from "@material-ui/core";
 import { motion } from "framer-motion";
 
 export const NavList = () => {

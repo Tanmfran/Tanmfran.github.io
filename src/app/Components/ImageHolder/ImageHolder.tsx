@@ -8,21 +8,25 @@ interface ImageHolderProps {
   };
   className?: string;
   type?: string;
+  style?: any;
 }
 
 const TRANSITION_TIME_OPACITY_S = 4;
-const TRANSITION_TIME_ROTATE_S = 1;
+const TRANSITION_TIME_ROTATE_S = 0.5;
 
 export const ImageHolder = (props: ImageHolderProps) => {
   if (props.type === "rotate") {
     return (
-      <div className={props.className ? props.className : undefined}>
+      <div
+        className={props.className ? props.className : undefined}
+        style={props.style ? props.style : undefined}
+      >
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, rotate: [-180, 180] }}
+          animate={{ rotate: 1080, opacity: 1 }}
           transition={{
-            duration: TRANSITION_TIME_OPACITY_S,
-            rotate: { yoyo: Infinity, duration: TRANSITION_TIME_ROTATE_S },
+            // duration: TRANSITION_TIME_OPACITY_S,
+            rotate: { repeat: Infinity, duration: 10 },
           }}
         >
           <img src={props.img.src} alt={props.img.alt} />
