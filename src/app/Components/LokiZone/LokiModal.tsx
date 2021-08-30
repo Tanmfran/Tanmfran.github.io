@@ -1,17 +1,9 @@
-import React from "react";
-import {
-  Backdrop,
-  Button,
-  ButtonGroup,
-  Card,
-  Fade,
-  Slide,
-} from "@material-ui/core";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { Button, ButtonGroup, Card } from "@material-ui/core";
+import { motion } from "framer-motion";
 import styles from "./LokiZone.module.scss";
 import Modal, { Styles } from "react-modal";
 import { useHistory } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
 
 interface LokiModalProps {
   isVisible: boolean;
@@ -44,15 +36,25 @@ const customStyles = {
 export const LokiModal = (props: LokiModalProps) => {
   const history = useHistory();
 
+  const [goBack, setGoBack] = useState(false);
+
   const sendMeHome = () => {
-    props.closeModal();
+    setGoBack(true);
   };
+
+  useEffect(() => {
+    if (goBack) {
+      props.closeModal();
+    }
+  }, [goBack, props]);
 
   return (
     <Modal
       closeTimeoutMS={300}
       isOpen={props.isVisible}
-      onRequestClose={props.closeModal}
+      onAfterClose={() => {
+        if (goBack) history.push("/");
+      }}
       className={styles.lokiModal}
       portalClassName={styles.lokiModal}
       ariaHideApp={false}
@@ -69,11 +71,11 @@ export const LokiModal = (props: LokiModalProps) => {
         <Card className={styles.lokiCard} variant={"elevation"}>
           <ButtonGroup>
             <Button
-              onClick={props.closeModal}
               component={motion.div}
               whileTap={{ scale: 2 }}
               whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
               style={{ padding: 8 }}
+              onClick={props.closeModal}
             >
               Heckers Yes
             </Button>

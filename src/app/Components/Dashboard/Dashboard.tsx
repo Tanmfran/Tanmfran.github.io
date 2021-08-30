@@ -2,6 +2,7 @@ import React from "react";
 import ImageHolder from "../ImageHolder/ImageHolder";
 import styles from "./Dashboard.module.scss";
 import { Card } from "@material-ui/core";
+import { Canvas } from "../Background/ BackgroundCanvas";
 
 export const Dashboard = () => {
   const imageSource = {
