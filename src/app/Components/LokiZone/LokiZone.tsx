@@ -22,7 +22,7 @@ export const LokiZone = () => {
         closeModal={closeModal}
         key={"lokiModal"}
       />
-      {/*{!showModal && <ImageHolder img={lokiImage} type={"rotate"} />}*/}
+      {!showModal && <ImageHolder img={lokiImage} type={"rotate"} />}
     </>
   );
 };
