@@ -5,11 +5,6 @@ import styles from "./LokiZone.module.scss";
 import Modal, { Styles } from "react-modal";
 import { useHistory } from "react-router-dom";
 
-interface LokiModalProps {
-  isVisible: boolean;
-  closeModal: () => void;
-}
-
 const ANIMATION_DURATION_S = 1;
 
 const getVariants = (direction: string) => ({
@@ -32,6 +27,12 @@ const customStyles = {
   },
   content: {},
 };
+
+interface LokiModalProps {
+  isVisible: boolean;
+  closeModal: () => void;
+  setShowLokis: () => void;
+}
 
 export const LokiModal = (props: LokiModalProps) => {
   const history = useHistory();
@@ -75,7 +76,7 @@ export const LokiModal = (props: LokiModalProps) => {
               whileTap={{ scale: 2 }}
               whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
               style={{ padding: 8 }}
-              onClick={props.closeModal}
+              onClick={props.setShowLokis}
             >
               Heckers Yes
             </Button>

@@ -9,9 +9,15 @@ import { LokiPropagator } from "./LokiPropagator";
 
 export const LokiZone = () => {
   const [showModal, setShowModal] = useState(true);
+  const [lokis, setLokis] = useState(false);
 
   const closeModal = () => {
     setShowModal(false);
+  };
+
+  const showLokis = () => {
+    closeModal();
+    setLokis(true);
   };
 
   return (
@@ -20,8 +26,9 @@ export const LokiZone = () => {
         isVisible={showModal}
         closeModal={closeModal}
         key={"lokiModal"}
+        setShowLokis={showLokis}
       />
-      {!showModal && <LokiPropagator />}
+      {!showModal && lokis && <LokiPropagator />}
     </>
   );
 };
