@@ -7,7 +7,7 @@ const lokiImage = {
 };
 
 const lokiFace = {
-  src: "https://previews.dropbox.com/p/thumb/ABQPqA0f-hCc92MvV8sufOZhE0g8FG1jPsgetM79QHjNXcVwnJOAcQdqBmAgGyzV6PuGrGVq0PU72au4rtr570_cyo-vpi1BCWl2JPGY4h5kcZHA-lhW2YTE3Ja6GTjP7zBPAtRs_v123nrRX1ZwKeCaj78WaZuZyuOYTcxBjRSieYSbx8YxnLCJaAUIuBhu5DWp4lbFr4btKiM1oPBYvcQo5Pyu9cikPBFamxZ6QbE-f883wEFXcpshakHQZlPuKvolK0C1xEHtLGrVwql3n2iqBw6njaWPTHeCCDGCZYvoJCxjjuu9m4JIYddVdGzJubL7OCR2Q-Ytf_AoW1iCTcWx983iXKJpOJVfEzdcGt72eA/p.png?fv_content=true&size_mode=5",
+  src: "https://www.dropbox.com/s/gqbwjwpgd34e2wb/240964287_602829917552839_6712852289343453981_n-removebg-preview.png?dl=1",
   alt: "Dat Boi",
 };
 
