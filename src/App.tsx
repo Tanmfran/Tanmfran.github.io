@@ -56,9 +56,9 @@ export const App = () => {
   ];
 
   return (
-    <IonApp>
+    <IonApp className={"App"}>
       <IonReactHashRouter>
-        <IonSplitPane contentId="main" when="xs">
+        <IonSplitPane contentId="main" when="xs" class="main-split-pane">
           {/*Side Menu*/}
           <LeftNav />
           {/*Main Content*/}

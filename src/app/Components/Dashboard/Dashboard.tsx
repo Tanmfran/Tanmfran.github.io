@@ -11,10 +11,10 @@ export const Dashboard = () => {
   };
 
   return (
-    <>
+    <IonContent>
       <Card className={styles.dashboard} variant={"elevation"}>
         <ImageHolder img={imageSource} type={"none"} />
       </Card>
-    </>
+    </IonContent>
   );
 };

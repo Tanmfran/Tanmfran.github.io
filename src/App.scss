@@ -1,4 +1,10 @@
 .App {
+
+
+
+  .main-split-pane {
+    --side-max-width: 50px;
+  }
   //--ion-color-angular: #ac282b;
   //--ion-color-communication: #8e8d93;
   //--ion-color-tooling: #fe4c52;
@@ -184,3 +190,5 @@
   animation-timing-function: ease-out;
   -webkit-animation-fill-mode: forwards;
 }
+
+
