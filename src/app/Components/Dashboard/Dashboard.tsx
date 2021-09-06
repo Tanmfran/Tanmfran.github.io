@@ -1,7 +1,8 @@
 import React from "react";
-import ImageHolder from "../ImageHolder/ImageHolder";
+import ImageHolder from "../Shared/ImageHolder/ImageHolder";
 import styles from "./Dashboard.module.scss";
 import { Card } from "@material-ui/core";
+import { IonContent, IonPage } from "@ionic/react";
 
 export const Dashboard = () => {
   const imageSource = {
@@ -10,10 +11,10 @@ export const Dashboard = () => {
   };
 
   return (
-    <div>
+    <>
       <Card className={styles.dashboard} variant={"elevation"}>
         <ImageHolder img={imageSource} type={"none"} />
       </Card>
-    </div>
+    </>
   );
 };

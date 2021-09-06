@@ -55,7 +55,7 @@ export const IconHolder = (props: IconHolderProps) => {
             />
           )}
         </motion.div>
-        <motion.h1
+        <motion.div
           className={styles.shakeText}
           key={props.text}
           variants={getVariants("bottom")}
@@ -70,7 +70,7 @@ export const IconHolder = (props: IconHolderProps) => {
           >
             {props.text}
           </span>
-        </motion.h1>
+        </motion.div>
       </AnimatePresence>
     </div>
   );
