@@ -1,21 +1,8 @@
 import React from "react";
-import {
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
-  IonMenu,
-  IonMenuToggle,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export const LeftNav = () => {
-  const history = useHistory();
+const LeftNav = () => {
+  const navigate = useNavigate();
 
   const routes = [
     {
@@ -29,32 +16,34 @@ export const LeftNav = () => {
   ];
 
   const handleClick = (route: string) => {
-    history.push(route);
+    navigate(route);
   };
 
   return (
-    <IonMenu contentId="menu">
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Menu</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+    <div>
+      <div>
+        <div>
+          <div>Menu</div>
+        </div>
+      </div>
 
-      <IonContent>
-        <IonList>
-          <IonListHeader>Navigate</IonListHeader>
-          <IonMenuToggle autoHide={false}>
-            <IonItem button onClick={() => handleClick(routes[0].path)}>
-              <IonIcon slot="start" />
-              <IonLabel>Home</IonLabel>
-            </IonItem>
-            <IonItem button onClick={() => handleClick(routes[1].path)}>
-              <IonIcon slot="start" />
-              <IonLabel>Loki Zone</IonLabel>
-            </IonItem>
-          </IonMenuToggle>
-        </IonList>
-      </IonContent>
-    </IonMenu>
+      <div>
+        <div>
+          <div>Navigate</div>
+          <div>
+            <button onClick={() => handleClick(routes[0].path)}>
+              <div slot="start" />
+              <div>Home</div>
+            </button>
+            <button onClick={() => handleClick(routes[1].path)}>
+              <div slot="start" />
+              <div>Loki Zone</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
+
+export default LeftNav;

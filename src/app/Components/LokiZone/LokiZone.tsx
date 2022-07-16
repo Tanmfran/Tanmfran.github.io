@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { LokiModal } from "./LokiModal";
 import { LokiPropagator } from "./LokiPropagator";
 
@@ -7,7 +8,7 @@ import { LokiPropagator } from "./LokiPropagator";
 //   alt: "MyBoy!!",
 // };
 
-export const LokiZone = () => {
+const LokiZone = () => {
   const [showModal, setShowModal] = useState(true);
   const [lokis, setLokis] = useState(false);
 
@@ -32,3 +33,5 @@ export const LokiZone = () => {
     </>
   );
 };
+
+export default LokiZone;

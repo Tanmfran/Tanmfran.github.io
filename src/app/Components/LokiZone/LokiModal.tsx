@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Button, ButtonGroup, Card } from "@material-ui/core";
 import { motion } from "framer-motion";
-import styles from "./LokiZone.module.scss";
+import React, { useEffect, useState } from "react";
 import Modal, { Styles } from "react-modal";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import styles from "./LokiZone.module.scss";
 
 const ANIMATION_DURATION_S = 1;
 
@@ -35,7 +35,7 @@ interface LokiModalProps {
 }
 
 export const LokiModal = (props: LokiModalProps) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [goBack, setGoBack] = useState(false);
 
@@ -54,7 +54,7 @@ export const LokiModal = (props: LokiModalProps) => {
       closeTimeoutMS={300}
       isOpen={props.isVisible}
       onAfterClose={() => {
-        if (goBack) history.push("/");
+        if (goBack) navigate("/");
       }}
       className={styles.lokiModal}
       portalClassName={styles.lokiModal}
@@ -69,28 +69,12 @@ export const LokiModal = (props: LokiModalProps) => {
         exit={{ opacity: 0 }}
         animate={"animate"}
       >
-        <Card className={styles.lokiCard} variant={"elevation"}>
-          <ButtonGroup>
-            <Button
-              component={motion.div}
-              whileTap={{ scale: 2 }}
-              whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
-              style={{ padding: 8 }}
-              onClick={props.setShowLokis}
-            >
-              Heckers Yes
-            </Button>
-            <Button
-              onClick={sendMeHome}
-              component={motion.div}
-              whileTap={{ scale: 2 }}
-              whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
-              style={{ padding: 8 }}
-            >
-              No, send me back!
-            </Button>
-          </ButtonGroup>
-        </Card>
+        <div className={styles.lokiCard}>
+          <div>
+            <button onClick={props.setShowLokis}>Heckers Yes</button>
+            <button onClick={sendMeHome}>No, send me back!</button>
+          </div>
+        </div>
       </motion.div>
     </Modal>
   );

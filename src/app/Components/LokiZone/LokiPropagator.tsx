@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import ImageHolder from "../Shared/ImageHolder/ImageHolder";
 
 const lokiImage = {

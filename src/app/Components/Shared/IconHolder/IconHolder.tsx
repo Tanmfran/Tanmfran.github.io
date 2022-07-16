@@ -1,5 +1,6 @@
-import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+
 import styles from "./IconHolder.module.scss";
 
 interface IconHolderProps {
@@ -63,13 +64,18 @@ export const IconHolder = (props: IconHolderProps) => {
           exit={"initial"}
           animate={"animate"}
         >
-          <span
+          <button
             className={wobble ? styles.imageWobbleActive : styles.imageWobble}
             onClick={handleClick}
             onAnimationEnd={handleWobbleEnd}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleClick();
+              }
+            }}
           >
             {props.text}
-          </span>
+          </button>
         </motion.div>
       </AnimatePresence>
     </div>
