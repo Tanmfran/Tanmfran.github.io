@@ -20,7 +20,7 @@
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -29,4 +29,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.lokiPage {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }

@@ -11,7 +11,7 @@ const LeftNav = () => {
   const routes = [
     {
       header: "Dashboard",
-      path: "",
+      path: "/",
     },
     {
       header: "Loki Zone",
