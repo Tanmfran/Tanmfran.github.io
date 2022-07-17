@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IconHolder } from "../Shared/IconHolder/IconHolder";
+import { IconHolder } from "../IconHolder/IconHolder";
 
 import styles from "./Header.module.scss";
 

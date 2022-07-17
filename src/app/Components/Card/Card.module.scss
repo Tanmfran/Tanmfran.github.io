@@ -1,0 +1,22 @@
+.card {
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 3px 3px #888888;
+    min-width: 200px;
+    min-height: 200px;
+    overflow: hidden;
+    display: flex;
+}
+
+.cardContent {
+    margin: 8px;
+    flex: 1;
+}
+
+.catThing {
+    overflow: hidden;
+}
+
+.cardHeader {
+    font-weight: bold;
+}

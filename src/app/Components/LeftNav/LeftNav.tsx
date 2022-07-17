@@ -7,7 +7,6 @@ import NavItem from "./NavItem";
 const LeftNav = () => {
   const location = useLocation();
 
-  console.log(location);
   const routes = [
     {
       header: "Dashboard",
@@ -17,21 +16,33 @@ const LeftNav = () => {
       header: "Loki Zone",
       path: "loki-zone",
     },
+    {
+      header: "TBD",
+      path: "/1",
+    },
+    {
+      header: "TBD",
+      path: "/2",
+    },
+    {
+      header: "TBD",
+      path: "/3",
+    },
   ];
 
   return (
     <div className={styles.leftNav}>
       <ul className={styles.navItems}>
-        <NavItem
-          route={routes[0].path}
-          label={routes[0].header}
-          active={location.pathname === "/"}
-        />
-        <NavItem
-          route={routes[1].path}
-          label={routes[1].header}
-          active={location.pathname === "/loki-zone"}
-        />
+        {routes.map((route, index) => {
+          return (
+            <NavItem
+              key={index}
+              route={route.path}
+              label={route.header}
+              active={location.pathname === route.path}
+            />
+          );
+        })}
       </ul>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import Button from "../Shared/Button/Button";
+import Button from "../Button/Button";
 
 import styles from "./LeftNav.module.scss";
 
