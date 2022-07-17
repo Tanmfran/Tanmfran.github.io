@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import Modal, { Styles } from "react-modal";
+import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./LokiZone.module.scss";
@@ -19,14 +19,6 @@ const getVariants = (direction: string) => ({
     transition: { duration: ANIMATION_DURATION_S, ease: "easeInOut" },
   },
 });
-
-const customStyles = {
-  overlay: {
-    position: undefined,
-    backgroundColor: "rgba(0, 0, 0, 0)",
-  },
-  content: {},
-};
 
 interface LokiModalProps {
   isVisible: boolean;
@@ -59,7 +51,6 @@ export const LokiModal = (props: LokiModalProps) => {
       className={styles.lokiModal}
       portalClassName={styles.lokiModal}
       ariaHideApp={false}
-      style={customStyles as Styles}
     >
       <motion.div
         key="modal"

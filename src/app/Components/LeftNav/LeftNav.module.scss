@@ -1,56 +1,14 @@
-.leftNavItem {
-  margin: 0 4px 8px 4px;
-  a {
-    text-decoration: unset;
-    color: white;
-  }
-  flex-wrap: wrap;
-
-  :global(.MuiListItem-root) {
-    width: unset;
-  }
-
-  &:hover {
-    background: lighten(#282c34, 50%)
-  }
+.leftNav {
+  min-width: 10%;
+  border-right: 1px solid black
 }
 
-.drawer {
-  top: unset;
-  left: unset;
-  position: unset;
-
-  :global(.MuiDrawer-paper) {
-    top: unset;
-    left: unset;
-    position: unset;
-    border-radius: 8px;
-    background: #282c34;
-  }
-}
-
-
-.drawerCollapsed {
-  top: unset;
-  left: unset;
-  position: unset;
-  width: 10%
-}
-
-.navList {
+.navItems {
   display: flex;
   flex-direction: column;
-  width: unset;
-  flex-wrap: wrap;
-  padding: 0;
+  margin-top: 64px;
 
-  :global(.MuiListItem-root) {
-    width: unset;
-  }
-
-  :global(.MuiList-padding) {
-    padding-top: 0
+  > button {
+    margin-top: 8px
   }
 }
-
-
