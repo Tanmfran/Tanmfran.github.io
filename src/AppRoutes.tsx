@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 import "./App.scss";
 
-import Dashboard from "./app/Pages/Dashboard/Dashboard";
-import LokiZone from "./app/Pages/LokiZone/LokiZone";
+import Dashboard from "./app/Pages/dashboard/Dashboard";
+import LokiZone from "./app/Pages/loki/LokiZone";
 
 const AppRoutes = () => {
   return (

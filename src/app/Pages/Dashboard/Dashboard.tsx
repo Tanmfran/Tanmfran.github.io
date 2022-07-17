@@ -1,7 +1,7 @@
 import React from "react";
 
-import Card from "../../Components/Card/Card";
-import CardHeader from "../../Components/Card/CardHeader";
+import Card from "../../components/card/Card";
+import CardHeader from "../../components/card/CardHeader";
 
 import styles from "./Dashboard.module.scss";
 

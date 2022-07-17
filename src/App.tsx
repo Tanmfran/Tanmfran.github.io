@@ -1,21 +1,25 @@
 import "./App.scss";
+import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 
-import Header from "./app/Components/Header/Header";
-import LeftNav from "./app/Components/LeftNav/LeftNav";
+import Header from "./app/components/header/Header";
+import LeftNav from "./app/components/leftNav/LeftNav";
 import AppRoutes from "./AppRoutes";
+import { store } from "./store";
 
 export const App = () => {
   return (
-    <div className={"app"}>
-      <HashRouter>
-        <Header />
-        <div className={"content"}>
-          <LeftNav />
-          <AppRoutes />
-        </div>
-      </HashRouter>
-    </div>
+    <Provider store={store}>
+      <div className={"app"}>
+        <HashRouter>
+          <Header />
+          <div className={"content"}>
+            <LeftNav />
+            <AppRoutes />
+          </div>
+        </HashRouter>
+      </div>
+    </Provider>
   );
 };
 
