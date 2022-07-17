@@ -1,0 +1,39 @@
+
+.dashboard {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 30ch;
+  margin: 4px 4px 0 4px;
+  border-radius: 8px;
+}
+
+.lokiCard {
+  // background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  border: 1px soldi black;
+  border-radius: 4px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lokiPage {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}

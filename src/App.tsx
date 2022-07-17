@@ -1,23 +1,25 @@
-import React from "react";
-import { HashRouter as Router } from "react-router-dom";
 import "./App.scss";
-import { LeftNav } from "./app/Components/LeftNav/LeftNav";
-import { Header } from "./app/Components/Header/Header";
-import { Routes } from "./Routes";
-import { Canvas } from "./app/Components/Shared/Canvas";
+import { Provider } from "react-redux";
+import { HashRouter } from "react-router-dom";
+
+import Header from "./app/components/header/Header";
+import LeftNav from "./app/components/leftNav/LeftNav";
+import AppRoutes from "./AppRoutes";
+import { store } from "./store";
 
 export const App = () => {
   return (
-    <div role={"main"} className={"App"}>
-      <Canvas />
-      <Router>
-        <Header />
-        <div className={"pageContent"}>
-          <LeftNav />
-          <Routes />
-        </div>
-      </Router>
-    </div>
+    <Provider store={store}>
+      <div className={"app"}>
+        <HashRouter>
+          <Header />
+          <div className={"content"}>
+            <LeftNav />
+            <AppRoutes />
+          </div>
+        </HashRouter>
+      </div>
+    </Provider>
   );
 };
 

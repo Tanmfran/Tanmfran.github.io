@@ -1,14 +1,51 @@
 import React from "react";
-import { NavList } from "./NavList";
-import { Drawer } from "@material-ui/core";
-import styles from "./LeftNav.module.scss";
+import { useLocation } from "react-router-dom";
 
-export const LeftNav = () => {
+import styles from "./LeftNav.module.scss";
+import NavItem from "./NavItem";
+
+const LeftNav = () => {
+  const location = useLocation();
+
+  const routes = [
+    {
+      header: "Dashboard",
+      path: "/",
+    },
+    {
+      header: "Loki Zone",
+      path: "loki-zone",
+    },
+    {
+      header: "TBD",
+      path: "/1",
+    },
+    {
+      header: "TBD",
+      path: "/2",
+    },
+    {
+      header: "TBD",
+      path: "/3",
+    },
+  ];
+
   return (
-    <>
-      <Drawer variant={"permanent"} className={styles.drawer}>
-        <NavList />
-      </Drawer>
-    </>
+    <div className={styles.leftNav}>
+      <ul className={styles.navItems}>
+        {routes.map((route, index) => {
+          return (
+            <NavItem
+              key={index}
+              route={route.path}
+              label={route.header}
+              active={location.pathname === route.path}
+            />
+          );
+        })}
+      </ul>
+    </div>
   );
 };
+
+export default LeftNav;

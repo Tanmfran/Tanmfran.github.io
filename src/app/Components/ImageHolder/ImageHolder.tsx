@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
+import React from "react";
 
 interface ImageHolderProps {
   img: {
@@ -12,7 +12,6 @@ interface ImageHolderProps {
 }
 
 const TRANSITION_TIME_OPACITY_S = 4;
-const TRANSITION_TIME_ROTATE_S = 0.5;
 
 export const ImageHolder = (props: ImageHolderProps) => {
   if (props.type === "rotate") {

@@ -1,56 +1,31 @@
-.leftNavItem {
-  margin: 0 4px 8px 4px;
-  a {
-    text-decoration: unset;
-    color: white;
-  }
-  flex-wrap: wrap;
-
-  :global(.MuiListItem-root) {
-    width: unset;
-  }
-
-  &:hover {
-    background: lighten(#282c34, 50%)
-  }
+.leftNav {
+  min-width: 10%;
+  border-right: 1px solid gray;
 }
 
-.drawer {
-  top: unset;
-  left: unset;
-  position: unset;
-
-  :global(.MuiDrawer-paper) {
-    top: unset;
-    left: unset;
-    position: unset;
-    border-radius: 8px;
-    background: #282c34;
-  }
-}
-
-
-.drawerCollapsed {
-  top: unset;
-  left: unset;
-  position: unset;
-  width: 10%
-}
-
-.navList {
+.navItems {
   display: flex;
   flex-direction: column;
-  width: unset;
-  flex-wrap: wrap;
-  padding: 0;
 
-  :global(.MuiListItem-root) {
-    width: unset;
-  }
+  margin-left: 0px;
+  padding: 4px 4px 4px 4px;
+}
 
-  :global(.MuiList-padding) {
-    padding-top: 0
+.navItem {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 8px;
+  border: 1px solid #1e1e1e;
+  border-radius: 4px;
+  border-bottom: 1px dotted gray;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten(#1e1e1e, 5%);
   }
 }
 
-
+.active {
+  color: rgb(19, 140, 211);
+  background-color: lighten(#1e1e1e, 5%);
+}

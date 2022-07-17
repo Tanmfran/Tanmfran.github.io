@@ -1,5 +1,6 @@
-import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+
 import styles from "./IconHolder.module.scss";
 
 interface IconHolderProps {
@@ -8,6 +9,7 @@ interface IconHolderProps {
     alt: string;
   };
   text: string;
+  className?: string;
 }
 
 const ANIMATION_DURATION_S = 0.8;
@@ -40,7 +42,7 @@ export const IconHolder = (props: IconHolderProps) => {
     <div className="icon-holder">
       <AnimatePresence>
         <motion.div
-          className="icon-holder__icon"
+          className={`icon-holder__icon $`}
           key={props.text + "icon"}
           variants={getVariants("top")}
           initial={"initial"}
@@ -55,7 +57,7 @@ export const IconHolder = (props: IconHolderProps) => {
             />
           )}
         </motion.div>
-        <motion.h1
+        <motion.div
           className={styles.shakeText}
           key={props.text}
           variants={getVariants("bottom")}
@@ -63,14 +65,19 @@ export const IconHolder = (props: IconHolderProps) => {
           exit={"initial"}
           animate={"animate"}
         >
-          <span
+          <button
             className={wobble ? styles.imageWobbleActive : styles.imageWobble}
             onClick={handleClick}
             onAnimationEnd={handleWobbleEnd}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleClick();
+              }
+            }}
           >
             {props.text}
-          </span>
-        </motion.h1>
+          </button>
+        </motion.div>
       </AnimatePresence>
     </div>
   );
