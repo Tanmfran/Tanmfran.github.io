@@ -1,11 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import styles from "./LeftNav.module.scss";
+import NavItem from "./NavItem";
 
 const LeftNav = () => {
-  const navigate = useNavigate();
+  const location = useLocation();
 
+  console.log(location);
   const routes = [
     {
       header: "Dashboard",
@@ -17,22 +19,20 @@ const LeftNav = () => {
     },
   ];
 
-  const handleClick = (route: string) => {
-    navigate(route);
-  };
-
   return (
     <div className={styles.leftNav}>
-      <div className={styles.navItems}>
-        <button onClick={() => handleClick(routes[0].path)}>
-          <div slot="start" />
-          <div>Home</div>
-        </button>
-        <button onClick={() => handleClick(routes[1].path)}>
-          <div slot="start" />
-          <div>Loki Zone</div>
-        </button>
-      </div>
+      <ul className={styles.navItems}>
+        <NavItem
+          route={routes[0].path}
+          label={routes[0].header}
+          active={location.pathname === "/"}
+        />
+        <NavItem
+          route={routes[1].path}
+          label={routes[1].header}
+          active={location.pathname === "/loki-zone"}
+        />
+      </ul>
     </div>
   );
 };

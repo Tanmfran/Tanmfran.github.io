@@ -9,6 +9,7 @@ interface IconHolderProps {
     alt: string;
   };
   text: string;
+  className?: string;
 }
 
 const ANIMATION_DURATION_S = 0.8;
@@ -41,7 +42,7 @@ export const IconHolder = (props: IconHolderProps) => {
     <div className="icon-holder">
       <AnimatePresence>
         <motion.div
-          className="icon-holder__icon"
+          className={`icon-holder__icon $`}
           key={props.text + "icon"}
           variants={getVariants("top")}
           initial={"initial"}

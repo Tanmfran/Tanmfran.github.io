@@ -1,14 +1,36 @@
 .leftNav {
   min-width: 10%;
-  border-right: 1px solid black
+  border-right: 1px solid gray;
+  z-index: 1;
 }
 
 .navItems {
   display: flex;
   flex-direction: column;
-  margin-top: 64px;
+
+  margin-left: 0px;
+  padding: 4px 8px 4px 8px;
+
 
   > button {
     margin-top: 8px
   }
+}
+
+.navItem {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 8px;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten(#1e1e1e, 5%);
+  }
+}
+
+.active {
+  color: rgb(19, 140, 211);
+  background-color: lighten(#1e1e1e, 5%);
 }

@@ -20,8 +20,8 @@ export const LokiPropagator = () => {
   };
 
   useEffect(() => {
-    const maxWidth = window.innerWidth - 300;
-    const maxHeight = window.innerHeight - 300;
+    const maxWidth = window.innerWidth - 500;
+    const maxHeight = window.innerHeight - 500;
 
     const interval = setInterval(() => {
       const newPlace = {

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import Modal from "react-modal";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./LokiZone.module.scss";
@@ -29,44 +28,29 @@ interface LokiModalProps {
 export const LokiModal = (props: LokiModalProps) => {
   const navigate = useNavigate();
 
-  const [goBack, setGoBack] = useState(false);
-
   const sendMeHome = () => {
-    setGoBack(true);
+    navigate("/");
   };
 
-  useEffect(() => {
-    if (goBack) {
-      props.closeModal();
-    }
-  }, [goBack, props]);
-
   return (
-    <Modal
-      closeTimeoutMS={300}
-      isOpen={props.isVisible}
-      onAfterClose={() => {
-        if (goBack) navigate("/");
-      }}
-      className={styles.lokiModal}
-      portalClassName={styles.lokiModal}
-      ariaHideApp={false}
-    >
-      <motion.div
-        key="modal"
-        className="icon-holder__icon"
-        variants={getVariants("top")}
-        initial={"initial"}
-        exit={{ opacity: 0 }}
-        animate={"animate"}
-      >
-        <div className={styles.lokiCard}>
-          <div>
-            <button onClick={props.setShowLokis}>Heckers Yes</button>
-            <button onClick={sendMeHome}>No, send me back!</button>
+    <>
+      {props.isVisible && (
+        <motion.div
+          key="modal"
+          variants={getVariants("top")}
+          initial={"initial"}
+          exit={{ opacity: 0 }}
+          animate={"animate"}
+          className={styles.modal}
+        >
+          <div className={styles.lokiCard}>
+            <div>
+              <button onClick={props.setShowLokis}>Heckers Yes</button>
+              <button onClick={sendMeHome}>No, send me back!</button>
+            </div>
           </div>
-        </div>
-      </motion.div>
-    </Modal>
+        </motion.div>
+      )}
+    </>
   );
 };

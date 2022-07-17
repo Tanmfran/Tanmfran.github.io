@@ -1,16 +1,3 @@
-.lokiModal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px black solid;
-}
-
-.paper {
-  background-color: grey;
-  border: 2px solid #000;
-  box-shadow: 0 0 0 0;
-  padding: 0;
-}
 
 .dashboard {
   flex-grow: 1;
@@ -21,11 +8,24 @@
 }
 
 .lokiCard {
-  top: 50%;
-  left: 50%;
+  // background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 400px;
-  height: 400px;
-  background: white;
+  height: 200px;
+  background-color: white;
+  border: 1px soldi black;
+  border-radius: 4px;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
