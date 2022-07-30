@@ -1,21 +1,30 @@
+import { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 import React, { useEffect, useMemo, useState } from "react";
 import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-alpine.css";
+import "ag-grid-community/styles/ag-theme-balham.css";
+
+import { currencyFormat } from "../../shared/utils";
 
 import styles from "./Grid.module.scss";
 
-export const Grid = () => {
-  const [rowData, setRowData] = useState(); // Set rowData to Array of Objects, one Object per Row
+interface Vehicle {
+  make: string;
+  model: string;
+  price: number;
+}
 
-  const columnDefs = useMemo(
-    () => [
-      { field: "make", filter: true },
-      { field: "model", filter: true },
-      { field: "price" },
-    ],
-    []
-  );
+export const Grid = () => {
+  const [rowData, setRowData] = useState<Vehicle[]>(); // Set rowData to Array of Objects, one Object per Row
+
+  const columnDefs: ColDef<Vehicle>[] = [
+    { field: "make", filter: true },
+    { field: "model", filter: true },
+    {
+      field: "price",
+      valueFormatter: (params) => currencyFormat(params.value),
+    },
+  ];
 
   const defaultColDef = useMemo(
     () => ({
@@ -34,8 +43,10 @@ export const Grid = () => {
   return (
     <>
       <div className={styles.gridPage}>
-        <div>Header</div>
-        <div className={`ag-theme-alpine ${styles.agGridWrapper}`}>
+        <div className={styles.agGridWrapperHeader}>
+          Random Cars and some Prices or something
+        </div>
+        <div className={`ag-theme-balham-dark ${styles.agGridWrapper}`}>
           <AgGridReact
             rowData={rowData} // Row Data for Rows
             columnDefs={columnDefs} // Column Defs for Columns

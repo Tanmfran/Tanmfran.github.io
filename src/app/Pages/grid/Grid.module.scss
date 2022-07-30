@@ -3,9 +3,17 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    margin: 16px;
+
+    .agGridWrapperHeader {
+        margin-bottom: 16px;
+    }
+
+    .agGridWrapper {
+        height: 100%;
+        width: 100%;
+    }
 }
 
-.agGridWrapper {
-    height: 100%;
-    width: 100%;
-}
+
+
