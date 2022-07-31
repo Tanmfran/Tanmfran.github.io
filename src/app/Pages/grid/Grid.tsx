@@ -1,9 +1,9 @@
 import { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 import React, { useEffect, useMemo, useState } from "react";
+
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-balham.css";
-
 import { currencyFormat } from "../../shared/utils";
 
 import styles from "./Grid.module.scss";
