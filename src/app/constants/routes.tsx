@@ -1,4 +1,5 @@
 import Dashboard from "../pages/dashboard/Dashboard";
+import { CalculationForm } from "../pages/form/CalculationForm";
 import { Grid } from "../pages/grid/Grid";
 import LokiZone from "../pages/loki/LokiZone";
 
@@ -19,9 +20,9 @@ export const routes = [
     component: Grid,
   },
   {
-    header: "TBD",
-    path: "/2",
-    component: () => <></>,
+    header: "Form",
+    path: "/form",
+    component: CalculationForm,
   },
   {
     header: "TBD",
